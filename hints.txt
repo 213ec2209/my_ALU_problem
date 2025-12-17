@@ -1,0 +1,4 @@
+1. ALu operations: The number of arithmetic operations is depend upon op value what opration is performed.
+2.The ALU output is expected to be purely combinational; no clock-cycle latency is allowed.
+3.Pay close attention to when the testbench samples the ALU output.
+4. initial set output Y  is zero.
