@@ -1,0 +1,5 @@
+#log
+*.log
+#IDE
+.vscode/
+.DS_Store

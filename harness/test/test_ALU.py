@@ -26,26 +26,3 @@ async def test_alu_operations(dut):
             f"ALU failed for A={A_val}, B={B_val}, op={op_val:03b}: expected {expected}, got {dut.Y.value.to_unsigned()}"
 
         dut._log.info(f"PASS: A={A_val:02X}, B={B_val:02X}, op={op_val:03b} => Y={dut.Y.value.to_unsigned():02X}")
-
-# CRITICAL: Pytest wrapper function
-def test_ALU_hidden_runner():
-    import os
-    from pathlib import Path
-    from cocotb_tools.runner import get_runner
-    
-    sim = os.getenv("SIM", "icarus")
-    proj_path = Path(__file__).resolve().parent.parent
-    
-    sources = [proj_path / "sources/ALU.sv"]  # Note: sources/ not rtl/
-    
-    runner = get_runner(sim)
-    runner.build(
-        sources=sources,
-        hdl_toplevel="ALU",
-        always=True,
-    )
-    runner.test(
-        hdl_toplevel="ALU",
-        test_module="test_ALU_hidden"
-    )
-
