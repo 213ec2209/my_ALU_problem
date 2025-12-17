@@ -11,8 +11,8 @@ async def test_alu_operations(dut):
         (0x12, 0x10, 0b010, 0x10),  # AND
         (0x12, 0x10, 0b011, 0x12),  # OR
         (0x12, 0x10, 0b100, 0x02),  # XOR
-        (0x12, 0x10, 0b101, 0x00),  # SLT
-        (0x05, 0x10, 0b101, 0x01),  # SLT (A<B)
+        (0x12, 0x10, 0b101, 0x00),  # SLT (A > B)
+        (0x05, 0x10, 0b101, 0x01),  # SLT (A < B)
     ]
 
     for A_val, B_val, op_val, expected in test_vectors:
@@ -21,13 +21,20 @@ async def test_alu_operations(dut):
         dut.op.value = op_val
 
         await Timer(10, unit="ns")  # wait for combinational logic
-assert dut.Y.value.is_resolvable and dut.Y.value.to_unsigned() == expected, \
-    f"ALU failed: A={A_val}, B={B_val}, op={op_val:03b}, Y={dut.Y.value}"
 
+        result = dut.Y.value.to_unsigned()
 
-        dut._log.info(f"PASS: A={A_val:02X}, B={B_val:02X}, op={op_val:03b} => Y={dut.Y.value:02X}")
+        assert dut.Y.value.is_resolvable, "Y is not resolvable"
+        assert result == expected, (
+            f"FAIL: A={A_val:02X}, B={B_val:02X}, "
+            f"op={op_val:03b}, Y={result:02X}, exp={expected:02X}"
+        )
 
-# CRITICAL: Pytest wrapper function
+        dut._log.info(
+            f"PASS: A={A_val:02X}, B={B_val:02X}, "
+            f"op={op_val:03b} => Y={result:02X}"
+        )
+
 def test_ALU_hidden_runner():
     import os
     from pathlib import Path
