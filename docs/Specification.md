@@ -6,7 +6,7 @@
 
 # 
 
-# An Arithmetic Logic Unit (ALU) is a fundamental digital circuit used to perform arithmetic and logical operations on binary data. The ALU forms a core component of processors, controllers, and cryptographic hardware modules. It operates on two input operands and produces a result based on a selected operation. Typical ALU operations include addition, subtraction, bitwise logical functions, and comparison operations. The ALU described in this document is an 8-bit synchronous ALU that performs operations on two 8-bit inputs under the control of a clock signal. The result is registered as combinational type.
+# An Arithmetic Logic Unit (ALU) is a fundamental digital circuit used to perform arithmetic and logical operations on binary data. The ALU forms a core component of processors, controllers, and cryptographic hardware modules. It operates on two input operands and produces a result based on a selected operation. Typical ALU operations include addition, subtraction, bitwise logical functions, and comparison operations. The ALU described in this document is an 8-bit Asynchronous ALU that performs operations on two 8-bit inputs. The result is registered as combinational type.
 
 # 
 
