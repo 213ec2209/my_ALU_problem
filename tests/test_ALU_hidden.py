@@ -40,10 +40,10 @@ async def test_alu_operations(dut):
 
 # CRITICAL: Pytest wrapper function
 def test_ALU_hidden_runner():
-    import os
+       import os
     from pathlib import Path
     from cocotb_tools.runner import get_runner
-    
+
     sim = os.getenv("SIM", "icarus")
     proj_path = Path(__file__).resolve().parent.parent
     
