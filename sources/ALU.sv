@@ -10,7 +10,7 @@ module ALU (
 );
 
 //Insert internal signal declarations
-// initial assiy output Y is zero
+// initial assign output Y is zero
  // write a case statement to perform different arithmetic and logic operations  
 //update output according in operand op input 
  
