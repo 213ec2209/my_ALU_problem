@@ -6,7 +6,7 @@
 
 # 
 
-# An Arithmetic Logic Unit (ALU) is a fundamental digital circuit used to perform arithmetic and logical operations on binary data. The ALU forms a core component of processors, controllers, and cryptographic hardware modules. It operates on two input operands and produces a result based on a selected operation. Typical ALU operations include addition, subtraction, bitwise logical functions, and comparison operations. The ALU described in this document is an 8-bit asynchronous ALU that performs operations on two 8-bit inputs . The result is registered as combinational type.
+# An Arithmetic Logic Unit (ALU) is a fundamental digital circuit used to perform arithmetic and logical operations on binary data. The ALU forms a core component of processors, controllers, and cryptographic hardware modules. It operates on two input operands and produces a result based on a selected operation. Typical ALU operations include addition, subtraction, bitwise logical functions, and comparison operations. The ALU described in this document is an 8-bit Asynchronous ALU that performs operations on two 8-bit inputs. The result is registered as combinational type.
 
 # 
 
@@ -62,7 +62,7 @@
 
 # 
 
-# The ALU performs different arithmetic and logical operations based on the value of the operation select signal op. All operations are executed synchronously on the rising edge of the clock.
+# The ALU performs different arithmetic and logical operations based on the value of the operation select signal op. All operations are executed Asynchronously.
 
 # 
 
@@ -560,7 +560,7 @@
 
 # 
 
-# The ALU module provides a compact and efficient implementation of basic arithmetic and logical operations for 8-bit data paths. Its fully combinational nature ensures low latency and easy integration into larger digital systems. The inclusion of a zero flag enables straightforward control-flow decisions, making the module suitable for simple processors, controllers, and RTL problem benchmarks.
+# The ALU module provides a compact and efficient implementation of basic arithmetic and logical operations for 8-bit data paths. Its fully combinational nature ensures low latency and easy integration into larger digital systems.
 
 # 
 
@@ -793,6 +793,5 @@
 # 
 
 # The ALY output Y is  = 8'h22
-
 
 
