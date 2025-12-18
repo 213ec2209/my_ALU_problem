@@ -560,7 +560,7 @@
 
 # 
 
-# The ALU module provides a compact and efficient implementation of basic arithmetic and logical operations for 8-bit data paths. Its fully combinational nature ensures low latency and easy integration into larger digital systems. The inclusion of a zero flag enables straightforward control-flow decisions, making the module suitable for simple processors, controllers, and RTL problem benchmarks.
+# The ALU module provides a compact and efficient implementation of basic arithmetic and logical operations for 8-bit data paths. Its fully combinational nature ensures low latency and easy integration into larger digital systems.
 
 # 
 
