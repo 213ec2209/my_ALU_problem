@@ -1,6 +1,9 @@
 ALU Documentation
 Overview
+
+
 An Arithmetic Logic Unit (ALU) is a fundamental digital circuit used to perform arithmetic and logical operations on binary data. It is a core component of processors, microcontrollers, and digital systems. The ALU accepts binary operands and an operation-select control signal, and it produces a result based on the selected operation.
+
 
 In this project, an 8-bit combinational ALU is specified. The ALU performs arithmetic and bitwise logical operations on two 8-bit unsigned inputs. The design is purely combinational, meaning the output responds immediately to changes in inputs without relying on clock signals, reset signals, or sequential elements. This ALU is intended for evaluation of an AI agent’s ability to correctly interpret specifications and implement digital logic from scratch.
 
@@ -14,7 +17,6 @@ First operand (A)
  Second operand (B) 
  Operation selection (op)
  ALU result (Y)
-
 
 
 The ALU algorithm works as follows:
