@@ -62,7 +62,7 @@
 
 # 
 
-# The ALU performs different arithmetic and logical operations based on the value of the operation select signal op. All operations are executed synchronously on the rising edge of the clock.
+# The ALU performs different arithmetic and logical operations based on the value of the operation select signal op. All operations are executed Asynchronously.
 
 # 
 
