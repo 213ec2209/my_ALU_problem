@@ -8,3 +8,4 @@ dependencies = [
     "pytest-xdist>=3.0.0",
      "cocotb-test>=0.2.4",
 ]
+
