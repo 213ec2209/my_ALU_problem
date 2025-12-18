@@ -1,16 +1,15 @@
 Code completion task:
 
-Complete the given partial Systemverilog RTL code based on the specification /workdir/docs/Specification.md. The RTL code should be synthesizable. The ALU generation should be present in a separate module ALU.sv.
+Complete the given partial Systemverilog RTL code based on the specification /workdir/docs/Specification.md. The RTL code should be synthesizable and purely combinational. The ALU generation should be present in a separate module ALU.sv.
 
 ALU operation
-The ALU is an 8-bit synchronous Arithmetic Logic Unit that performs arithmetic and logical operations on two 8-bit operands. The operation is selected using a 3-bit control signal. The output result is registered on the rising edge of the clock.
-The ALU performs computation using fundamental digital logic elements such as adders, subtractors, XOR gates, AND/OR gates, and unsigned comparators. No internal storage elements or feedback paths are used, making the ALU a purely combinational circuit. This design choice ensures low latency and predictable timing behavior.
+The ALU is an 8-bit combinational Arithmetic Logic Unit that operates on two 8-bit operands. The operation is determined by a 3-bit control signal, op. The output Y is computed directly from the current values of A, B, and op, without using any internal storage or feedback loops. The ALU uses basic digital logic elements such as adders, subtractors, AND/OR gates, XOR gates, and unsigned comparators. Being fully combinational, the design provides low-latency, predictable, and deterministic timing behavior.
 
 ALU Functional Principle
 
 Let A and B be the two 8-bit input operands, and op be the 3-bit operation selector. The ALU evaluates the selected operation based on op and produces the corresponding output Y.
 
-Each operation is computed independently, and a multiplexer selects the final output according to the operation code. Arithmetic operations are performed using 8-bit unsigned arithmetic, while logical operations are applied bitwise across the operands.
+Arithmetic operations are performed using 8-bit unsigned arithmetic, while logical operations are applied bitwise across the operands.
 
 The ALU supports the following operations:
 
@@ -32,7 +31,12 @@ Performs logical XOR on corresponding bits of A and B.
 Set-on-Less-Than (SLT)
 Compares operands A and B and sets the output to 1 if A is less than B; otherwise, sets the output to 0.
 
-
+Initial output handling: Initialy set output Y is 0.
+The ALU module must have the following interface:
+    A[7:0] -First operand of 8-bit
+  B[7:0]-Second operand of 8-bit
+ op  [2:0] -Operation select of 3 bit
+ Y[7:0]- 8-bit ALU result
 
 
 Partial RTL code
