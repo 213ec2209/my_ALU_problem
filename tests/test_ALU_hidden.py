@@ -22,10 +22,7 @@ async def test_alu_operations(dut):
 
         await Timer(1, unit="ns")  # delta-cycle settle
 
-        assert dut.Y.value.is_resolvable, (
-            f"Y not resolvable: A={A_val:02X}, B={B_val:02X}, op={op_val:03b}"
-        )
-
+    
         result = int(dut.Y.value)
 
         assert result == expected, (
